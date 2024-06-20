@@ -1,0 +1,51 @@
+@font-face {
+    font-family: NexaBlack;
+    src: url(./font/NexaText-Black.ttf);
+}
+@font-face {
+    font-family: NexaRegular;
+    src: url(./font/NexaText-Regular.ttf);
+}
+label {
+    font-family: NexaBlack, sans-serif;
+    color: #111111;
+}
+.tag {
+    font-family: NexaRegular,sans-serif;
+}
+.btnFont{
+    font-family: NexaRegular,sans-serif;
+    letter-spacing: 0.8px;
+}
+h1{
+    font-family: NexaBlack, sans-serif;
+    color: #111111;
+}
+.customFont {
+    font-family: NexaRegular,sans-serif;
+    color: #0F81C7;
+}
+
+.colorBtn {
+    background-color: #0F81C7;
+}
+
+.gambar {
+    max-width: 60%;
+}
+.deleteBtn {
+    color: #FD5058;
+    border-width: 2px;
+    border-style:solid;
+    border-color: #FD5058;
+    /* border: 2px #FD5058; */
+    /* background-color: #FD5058; */
+}
+
+.input {
+    background-color: #F0F0F0;
+}
+.deleteBtn:hover {
+    color: white;
+    background-color: #FD5058;
+}

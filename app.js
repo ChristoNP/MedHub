@@ -507,6 +507,21 @@ submit.addEventListener("click", function (e) {
   const experienceInput = document.getElementById("input-experience").value;
   const hospitalInput = document.getElementById("input-hospital").value;
   const genderInput = document.getElementById("input-gender").value;
+  if (!namaInput || !experienceInput || !hospitalInput || !genderInput) {
+    alert('Input required')
+  }
+  if (isNaN(Number(experienceInput))) {
+    alert('Input should be number')
+  }
+  if (!namaInput && !experienceInput && !hospitalInput && !genderInput) {
+    return
+  } else if (isNaN(Number(experienceInput))) {
+    return
+  }
+  if (genderInput !== 'Male' && genderInput !== 'Female') {
+    alert('Gender should be "Male" or "Female"')
+    return
+  }
   let newObj = {
     id: data.length + 1,
     nama: namaInput,
@@ -520,6 +535,7 @@ submit.addEventListener("click", function (e) {
     newObj.foto = "avatar2.webp";
   }
   data.push(newObj);
+  mainElement.innerHTML = "";
   data.forEach((dokter) => {
     if (dokter !== undefined) {
       const card = document.createElement("div");
@@ -605,13 +621,15 @@ submit.addEventListener("click", function (e) {
   });
 
   console.log(newObj);
-//   const dltClass = document.getElementsByClassName("dlt");
-//   Array.from(dltClass).forEach((a) => {
-//     a.addEventListener("click", function () {
-//       a.parentElement.remove();
-
-//       // alert("a")
-//     });
-//   });
+  const dltClass = document.getElementsByClassName("dlt");
+  Array.from(dltClass).forEach((a) => {
+    a.addEventListener("click", function () {
+      a.parentElement.remove();
+      // alert("a")
+      const dltId = a.previousElementSibling.children[1].children[0].id;
+      // console.log(dltId);
+      data[dltId - 1] = undefined;
+    });
+  });
 });
 // });
